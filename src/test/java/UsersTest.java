@@ -8,10 +8,11 @@ public class UsersTest extends TestBase {
 
     @Test
     public void shouldFetchListOfAllUsers() {
-        Response r =
-                REQUEST.get("/users");
+        Response r = REQUEST.get("/users");
 
-        r.then().assertThat().statusCode(200);
+        r.then().
+                log().body().
+                assertThat().statusCode(200);
 
         List<Integer> ages = r.path("age");
         List<User> users = r.body().jsonPath().getList("", User.class);
