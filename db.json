@@ -1,0 +1,11 @@
+{
+  "users": [
+    { "id": 1, "first_name": "Kasia", "last_name": "Słomka", "age": 45 },
+    { "id": 2, "first_name": "Piotr", "last_name": "Kowalski", "age": 45 }
+  ],
+  "pets": [
+    { "id": 1, "name": "Azor", "age": 2, "user_id": 1 },
+    { "id": 2, "name": "Tosia", "age": 4, "user_id": 1 },
+    { "id": 2, "name": "Burek", "age": 1, "user_id": 2 }
+  ]
+}
