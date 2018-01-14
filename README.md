@@ -1,4 +1,6 @@
 # Rest-Assured Automation Example
+This is an example application of Rest-Assured as a basis for API test fremwork. I don't hold any strict convention, I'm just showing different posible options one can have for handling requests, responses and assertions.
+You can see both generic Rest-Assured assertions (Hamcrest Matchers) being used here along with JUnit ones and even AssertJ assertions.
 
 ## API
 API used in this example is based on very easy to use  [`json-server` npm package](https://github.com/typicode/json-server). Database file used as source can be found in `db.json` file.

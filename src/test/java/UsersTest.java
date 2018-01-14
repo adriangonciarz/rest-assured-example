@@ -28,7 +28,7 @@ public class UsersTest extends TestBase {
                     .statusCode(200)
                 .and()
                     .body("id", equalTo(1))
-                    .body("first_name", equalTo("Kasia"));
+                    .body("firstName", equalTo("Kasia"));
     }
 
     /*
@@ -38,10 +38,7 @@ public class UsersTest extends TestBase {
     @Test
     public void shouldCreateNewUser() {
         //Generate new User
-        String firstName = FAKER.name().firstName();
-        String lastName = FAKER.name().lastName();
-        Integer age = FAKER.number().numberBetween(0,80);
-        User expected = new User(firstName, lastName, age);
+        User expected  = generateNewUser();
 
         //Send POST request to create User
         Response createUserResponse = REQUEST
@@ -60,14 +57,25 @@ public class UsersTest extends TestBase {
         User actual = REQUEST.get("/users/"+expected.id).as(User.class);
 
         //Assert first name is as expected
-        assertEquals(expected.last_name, actual.last_name);
+        assertEquals(expected.lastName, actual.lastName);
 
         //Get list of all users
-        List<User> allUsers = REQUEST.get("/users").body().jsonPath().getList("", User.class);
+        List<User> allUsers = getAllUsersList();
 
         //Assert All Users list contains created user
         assertThat(allUsers)
-                .extracting("first_name", "last_name", "age")
-                .contains(tuple(firstName, lastName, age));
+                .extracting("firstName", "lastName", "age")
+                .contains(tuple(expected.firstName, expected.lastName, expected.age));
+    }
+
+    private User generateNewUser(){
+        String firstName = FAKER.name().firstName();
+        String lastName = FAKER.name().lastName();
+        Integer age = FAKER.number().numberBetween(0,80);
+        return new User(firstName, lastName, age);
+    }
+
+    private List<User> getAllUsersList(){
+        return REQUEST.get("/users").body().jsonPath().getList("", User.class);
     }
 }
