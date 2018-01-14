@@ -31,30 +31,6 @@
       "name": "Burek",
       "age": 1,
       "userId": 2
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "name": "My Pet's name",
-      "age": 13
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "name": "My Pet's name",
-      "age": 13
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "name": "639c1b8ee6a7f9eb2e44a5a4b0ed3339",
-      "age": 13
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "name": "85982c044024747915a47cff16aa07b8",
-      "age": 13
     }
   ]
 }

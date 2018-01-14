@@ -31,10 +31,8 @@ public class UsersTest extends TestBase {
                     .body("firstName", equalTo("Kasia"));
     }
 
-    /*
-    This is more complex test that uses POJO serialization and deserialization
-    as well as JUnit assertions and very nice AssertJ assertions with extracting fields from objects
-     */
+//  This is more complex test that uses POJO serialization and deserialization
+//  as well as JUnit assertions and very nice AssertJ assertions with extracting fields from objects
     @Test
     public void shouldCreateNewUser() {
         //Generate new User
@@ -56,8 +54,9 @@ public class UsersTest extends TestBase {
         //Get created user
         User actual = REQUEST.get("/users/"+expected.id).as(User.class);
 
-        //Assert first name is as expected
-        assertEquals(expected.lastName, actual.lastName);
+        //This is a brilliant AssertJ assertion using JAva reflections underneath to verify two objects field by field.
+        //Highly recommended when using deserialized objects in tests
+        assertThat(expected).isEqualToComparingFieldByField(actual);
 
         //Get list of all users
         List<User> allUsers = getAllUsersList();
