@@ -1,11 +1,60 @@
 {
   "users": [
-    { "id": 1, "first_name": "Kasia", "last_name": "Słomka", "age": 45 },
-    { "id": 2, "first_name": "Piotr", "last_name": "Kowalski", "age": 19 }
+    {
+      "id": 1,
+      "firstName": "Kasia",
+      "lastName": "Słomka",
+      "age": 45
+    },
+    {
+      "id": 2,
+      "firstName": "Piotr",
+      "lastName": "Kowalski",
+      "age": 19
+    }
   ],
   "pets": [
-    { "id": 1, "name": "Azor", "age": 2, "user_id": 1 },
-    { "id": 2, "name": "Tosia", "age": 4, "user_id": 1 },
-    { "id": 2, "name": "Burek", "age": 1, "user_id": 2 }
+    {
+      "id": 1,
+      "name": "Azor",
+      "age": 2,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Tosia",
+      "age": 4,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Burek",
+      "age": 1,
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "My Pet's name",
+      "age": 13
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "name": "My Pet's name",
+      "age": 13
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "name": "639c1b8ee6a7f9eb2e44a5a4b0ed3339",
+      "age": 13
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "name": "85982c044024747915a47cff16aa07b8",
+      "age": 13
+    }
   ]
 }
